@@ -27,7 +27,10 @@ OctoFit Tracker is a three-tier application for a school fitness program. The st
 | Workout suggestions | `GET /api/workouts/suggestions/:userEmail` | Recommend workouts from recent activity patterns for the matching seeded user's email address. The first suggestion's `focus` matches that user's goal or recent activity, with a `reason` explaining why. An email with no matching user returns a deliberate 4xx (for example, `404`). |
 
 ## Implementation decisions
-
+Add POST /workouts endpoint in backend.
+Store workout data in MongoDB.
+Update React form to submit workout details.
+Display saved workouts in dashboard.
 Record your plan here before editing code.
 
 - Presentation tier decision:
@@ -39,6 +42,18 @@ Record your plan here before editing code.
 - Workout suggestions approach:
 
 ## Test plan
+Test Plan
+Backend:
+
+Verify POST /workouts returns 201.
+Verify validation rejects empty workout names.
+Frontend:
+
+Verify workout form submits successfully.
+Verify workout list updates after creation.
+Integration:
+
+Verify data is persisted in MongoDB.
 
 Record the commands you run and what each failure means.
 
